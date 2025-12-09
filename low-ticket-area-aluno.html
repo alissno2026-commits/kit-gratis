@@ -1,333 +1,441 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Low Ticket na Prática — Área do Aluno</title>
-  <!-- React + Babel (para JSX inline) -->
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <!-- Tailwind CSS (via CDN) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-  <style>
-    html, body { background: #fff; }
-    .blurball { filter: blur(64px); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 OFERTA EXCLUSIVA: Kit Fitness Essencial - Só Pague o Frete</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos CSS Base (OFERTA R$ 27,90) - DESIGN MODERNIZADO */
+        :root {
+            --cor-principal: #6A1B9A; /* Roxo Profundo */
+            --cor-acento: #FFC107; /* Amarelo/Dourado Forte */
+            --cor-fundo: #FAFAFA; /* Fundo Leve */
+            --cor-texto: #212121;
+            --sombra-leve: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cor-fundo);
+            margin: 0;
+            padding: 0;
+            color: var(--cor-texto);
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .main-wrapper {
+            background-color: #fff;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--cor-principal);
+            color: #fff;
+            padding: 30px 0;
+            margin-bottom: 20px;
+            border-bottom: 5px solid var(--cor-acento);
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin: 0;
+            font-weight: 900;
+        }
+        
+        h1 span {
+            color: var(--cor-acento);
+        }
+
+        .subtitle {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        /* Seção de Produtos */
+        .product-images {
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .product-item {
+            flex: 1;
+            text-align: center;
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: var(--sombra-leve);
+            transition: transform 0.3s;
+        }
+        
+        .product-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
+        
+        .product-item p {
+            font-weight: 600;
+            color: var(--cor-principal);
+        }
+        
+        /* Box de Preço e Oferta */
+        .price-box {
+            background: linear-gradient(135deg, #fce4ec, #f0f4c3); /* Gradiente Suave */
+            border: 4px solid var(--cor-principal);
+            padding: 35px;
+            text-align: center;
+            margin: 40px 0;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .price-box .original {
+            font-size: 1.4em;
+            color: #757575;
+            text-decoration: line-through;
+        }
+
+        .price-box .offer {
+            font-size: 3.5em;
+            color: var(--cor-principal);
+            font-weight: 900;
+            line-height: 1.1;
+            margin: 5px 0;
+        }
+
+        .price-box .small-text {
+            font-size: 1.8em;
+            color: var(--cor-acento);
+            font-weight: 700;
+            display: block;
+            margin-top: 10px;
+        }
+        
+        .price-final {
+            font-size: 4em;
+            color: #FF4500; /* Destaque em vermelho */
+            font-weight: 900;
+            margin: 10px 0;
+        }
+
+        .cta-button {
+            display: block;
+            width: 90%;
+            max-width: 450px;
+            margin: 20px auto 40px;
+            padding: 25px;
+            background: var(--cor-acento);
+            color: var(--cor-texto);
+            text-transform: uppercase;
+            font-size: 2em;
+            font-weight: 900;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 6px 0 #cc9b00; /* Sombra 3D */
+        }
+
+        .cta-button:hover {
+            background-color: #fdd835;
+            transform: translateY(2px);
+            box-shadow: 0 4px 0 #cc9b00;
+        }
+
+        /* Seção de Benefícios */
+        .benefits {
+            text-align: left;
+            margin-top: 50px;
+        }
+
+        .benefits h2 {
+            color: var(--cor-principal);
+            font-size: 2em;
+            border-bottom: 4px solid var(--cor-acento);
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 30px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .benefit-item {
+            background: #ffffff;
+            padding: 20px;
+            border-left: 5px solid var(--cor-principal);
+            border-radius: 8px;
+            box-shadow: var(--sombra-leve);
+        }
+
+        .benefit-item strong {
+            display: block;
+            font-size: 1.2em;
+            color: var(--cor-principal);
+            margin-bottom: 5px;
+        }
+
+        /* -------------------------------------- */
+        /* Estilos do POP-UP de Intenção de Saída */
+        /* -------------------------------------- */
+        .exit-popup-overlay {
+            display: none; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .exit-popup-content {
+            background: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+            border: 5px solid var(--cor-acento);
+            animation: fadeIn 0.4s ease-out;
+        }
+        
+        .popup-title {
+            color: var(--cor-principal);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 900;
+        }
+        
+        .popup-subtitle {
+            font-size: 1.2em;
+            color: #FF4500;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .popup-price {
+            font-size: 4em;
+            color: var(--cor-acento);
+            font-weight: 900;
+            line-height: 1;
+            margin: 10px 0 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .popup-text {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .popup-cta {
+            background-color: #FF4500; /* Laranja de Urgência */
+            color: #fff;
+            font-size: 1.6em;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 40px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 0 #cc3700;
+        }
+        
+        .popup-cta:hover {
+            background-color: #ff6347;
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #cc3700;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 35px;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            font-weight: 100;
+        }
+
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2em; }
+            .subtitle { font-size: 1.3em; }
+            .product-images { flex-direction: column; gap: 15px; }
+            .benefits-grid { grid-template-columns: 1fr; }
+            .price-final { font-size: 3em; }
+            .cta-button { font-size: 1.6em; padding: 18px; }
+        }
+        
+        @media (max-width: 480px) {
+            .popup-title { font-size: 2em; }
+            .popup-price { font-size: 3em; }
+        }
+    </style>
 </head>
 <body>
-  <div id="root"></div>
 
-  <script type="text/babel">
-    // ==========================================================
-    //  CONFIGURAÇÕES DO PROJETO (TROQUE AQUI O QUE FOR PRECISO)
-    // ==========================================================
-    const COURSE_NAME = "Low Ticket na Prática"; // <- TROCAR se quiser
-    const COURSE_TAGLINE = "Aprenda a criar, lançar e escalar ofertas de baixo custo com consistência."; // <- TROCAR se quiser
-
-    // ===== CONFIGURAR AQUI: AULAS (apenas o NOME aparece no front) =====
-    // Cada item tem: title (aparece) e url (NÃO aparece no texto — só é usado no player)
-    // Troque VIDEO_ID_# pelo ID do vídeo do YouTube (use 'não listado' no YouTube).
-    // Ex.: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-    const LESSONS = [
-      { title: "Introdução",                               url: "https://www.youtube.com/embed/VIDEO_ID_1" },
-      { title: "Mentalidade Low Ticket",                   url: "https://www.youtube.com/embed/VIDEO_ID_2" },
-      { title: "Pesquisa & Produto",                       url: "https://www.youtube.com/embed/VIDEO_ID_3" },
-      { title: "Oferta que Converte",                      url: "https://www.youtube.com/embed/VIDEO_ID_4" },
-      { title: "Copy Essencial",                           url: "https://www.youtube.com/embed/VIDEO_ID_5" },
-      { title: "Criativo (Vídeo/Imagem)",                  url: "https://www.youtube.com/embed/VIDEO_ID_6" },
-      { title: "Precificação & Bonuses",                   url: "https://www.youtube.com/embed/VIDEO_ID_7" },
-      { title: "Página (Estrutura Simples)",               url: "https://www.youtube.com/embed/VIDEO_ID_8" },
-      { title: "Setup de Ferramentas",                     url: "https://www.youtube.com/embed/VIDEO_ID_9" },
-      { title: "Métricas que Importam",                    url: "https://www.youtube.com/embed/VIDEO_ID_10" },
-      { title: "Conteúdo de Apoio",                        url: "https://www.youtube.com/embed/VIDEO_ID_11" },
-      { title: "Distribuição & Tráfego",                   url: "https://www.youtube.com/embed/VIDEO_ID_12" },
-      { title: "Otimização de Campanhas",                  url: "https://www.youtube.com/embed/VIDEO_ID_13" },
-      { title: "Escala com Responsabilidade",              url: "https://www.youtube.com/embed/VIDEO_ID_14" },
-      { title: "Encerramento & Próximos Passos",           url: "https://www.youtube.com/embed/VIDEO_ID_15" },
-    ];
-    // ===================================================================
-
-    // === Estado de "auth" simples usando localStorage (DEMO) ===
-    const storageKey = "aluno_lowticket_user_v1";
-    function useAuth() {
-      const [user, setUser] = React.useState(null);
-      React.useEffect(() => {
-        try {
-          const raw = localStorage.getItem(storageKey);
-          if (raw) setUser(JSON.parse(raw));
-        } catch (e) {}
-      }, []);
-      const login = (email, password) => {
-        const raw = localStorage.getItem(storageKey);
-        if (!raw) return { ok: false, msg: "Aluno não encontrado. Cadastre-se." };
-        const saved = JSON.parse(raw);
-        if (saved.email === email && saved.password === password) {
-          setUser(saved);
-          return { ok: true };
-        }
-        return { ok: false, msg: "Email ou senha inválidos." };
-      };
-      const register = (name, email, password) => {
-        const payload = { name, email, password, createdAt: new Date().toISOString() };
-        localStorage.setItem(storageKey, JSON.stringify(payload));
-        setUser(payload);
-        return { ok: true };
-      };
-      const logout = () => setUser(null);
-      return { user, login, register, logout };
-    }
-
-    function Navbar({ onOpenAccess, user, onLogout, goLessons }) {
-      return (
-        <header className="sticky top-0 z-40 bg-white/80 backdrop-filter backdrop-blur border-b border-blue-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 shadow-inner" />
-              <span className="font-bold tracking-tight text-xl text-gray-800">{COURSE_NAME}</span>
-            </div>
-            <div className="flex items-center gap-3">
-              {user ? (
-                <>
-                  <button onClick={goLessons} className="px-3 py-2 rounded-xl text-sm font-medium bg-blue-50 text-blue-700 hover:bg-blue-100">
-                    Aulas
-                  </button>
-                  <button onClick={onLogout} className="px-3 py-2 rounded-xl text-sm font-medium border border-gray-200 hover:bg-gray-50">
-                    Sair
-                  </button>
-                </>
-              ) : (
-                <button onClick={onOpenAccess} className="px-3 py-2 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 shadow-sm hover:from-blue-700 hover:to-blue-800">
-                  Acessar área de membros
-                </button>
-              )}
-            </div>
-          </div>
+    <div class="main-wrapper">
+        <header>
+            <h1>KIT FITNESS <span>ESSENCIAL</span></h1>
+            <p class="subtitle">O Seu Ginásio Completo, Agora Pelo Preço de UM CAFÉ!</p>
         </header>
-      );
-    }
 
-    function Hero({ onOpenAccess }) {
-      return (
-        <section className="relative overflow-hidden">
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute -top-24 -left-24 h-80 w-80 rounded-full bg-blue-200 opacity-50 blurball" />
-            <div className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-blue-300 opacity-40 blurball" />
-          </div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 grid md:grid-cols-2 gap-10 items-center">
-            <div>
-              <span className="inline-flex items-center gap-2 text-blue-800 bg-blue-50 border border-blue-100 px-3 py-1 rounded-full text-xs font-semibold">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue-600" /> TURMA ATIVA
-              </span>
-              <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900">
-                {COURSE_NAME}
-              </h1>
-              <p className="mt-4 text-lg text-gray-600">{COURSE_TAGLINE}</p>
-              <ul className="mt-6 space-y-2 text-gray-700">
-                <li className="flex gap-2 items-start"><span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-600"></span> Acesso exclusivo para alunos.</li>
-                <li className="flex gap-2 items-start"><span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-600"></span> Conteúdo prático, direto ao ponto.</li>
-                <li className="flex gap-2 items-start"><span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-600"></span> Atualizações e materiais de apoio.</li>
-              </ul>
-              <div className="mt-6 flex items-center gap-3">
-                <button onClick={onOpenAccess} className="px-5 py-3 rounded-2xl text-white font-semibold bg-gradient-to-r from-blue-600 to-blue-700 shadow hover:from-blue-700 hover:to-blue-800">
-                  Acessar área de membros
-                </button>
-              </div>
-              <p className="mt-3 text-sm text-gray-500">Já é aluno? Clique para entrar. Novo por aqui? Cadastre-se.</p>
-            </div>
-            <div className="relative">
-              <div className="rounded-2xl border border-blue-100 shadow-xl bg-gradient-to-br from-blue-100 to-white p-2">
-                <div className="h-64 sm:h-80 w-full rounded-xl bg-white flex items-center justify-center">
-                  <svg viewBox="0 0 48 48" className="h-16 w-16">
-                    <circle cx="24" cy="24" r="22" fill="#e5efff"></circle>
-                    <polygon points="20,16 36,24 20,32" fill="#2563eb"></polygon>
-                  </svg>
+        <div class="container">
+            
+            <p style="color: #FF4500; font-weight: 700; font-size: 1.1em; margin-top: -10px;">
+                ⚠️ ULTRAPASSE 90% DE DESCONTO: Pague SOMENTE o Envio!
+            </p>
+
+            <section class="product-images">
+                <div class="product-item">
+                    <img src="URL_ELASTICO_AQUI" alt="Set de Elásticos Fitness">
+                    <p>FORÇA: Set de Elásticos (5 Níveis)</p>
                 </div>
-              </div>
-              <div className="absolute -bottom-6 left-6 bg-white rounded-xl shadow p-3 border border-blue-100 text-sm">
-                Área exclusiva do aluno (vídeos privados).
-              </div>
-            </div>
-          </div>
-        </section>
-      );
-    }
+                <div class="product-item">
+                    <img src="URL_CORDA_AQUI" alt="Corda de Pular Ajustável">
+                    <p>CARDIO: Corda de Pular Ajustável</p>
+                </div>
+                <div class="product-item">
+                    <img src="URL_TAPETE_AQUI" alt="Tapete de Yoga Antiderrapante">
+                    <p>CONFORTO: Tapete Antiderrapante EllyLife</p>
+                </div>
+            </section>
 
-    function Footer() {
-      return (
-        <footer className="py-10 border-t border-blue-100 bg-gradient-to-b from-white to-blue-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 shadow-inner" />
-              <span className="font-semibold text-gray-700">{COURSE_NAME}</span>
-            </div>
-            <p className="text-sm text-gray-500">© {new Date().getFullYear()} {COURSE_NAME}. Todos os direitos reservados.</p>
-          </div>
+            <section class="price-box">
+                <p class="original">Valor de Mercado: R$ 197,90</p>
+                <p class="offer">VOCÊ LEVA HOJE POR:</p>
+                <span class="small-text">GRÁTIS! (Você Paga Apenas o Frete)</span>
+                <p class="price-final">R$ 27,90</p>
+                <p style="font-size: 1.1em; font-weight: 600;">Pagamento único e seguro.</p>
+            </section>
+
+            <a href="URL_DO_CHECKOUT_AQUI" class="cta-button">
+                GARANTIR MEU KIT POR APENAS R$ 27,90!
+            </a>
+            
+            <section class="benefits">
+                <h2>O que este Kit fará por você?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <strong>Resultados 3 em 1</strong>
+                        Força com elásticos, queima de gordura com a corda e flexibilidade no tapete. Treino completo garantido.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Liberdade Total</strong>
+                        Diga adeus à mensalidade do ginásio. Treine com equipamentos profissionais no conforto da sua casa.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Qualidade EllyLife</strong>
+                        Produtos duráveis e antiderrapantes para que você se concentre apenas no seu desempenho, com segurança.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Portabilidade Ilimitada</strong>
+                        Leve o kit em qualquer viagem ou para o parque. Nunca mais perca um treino!
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p style="text-align: center; font-size: 0.8em; color: #666; padding: 40px 20px;">
+                Oferta Limitada ao stock promocional. O valor de R$ 27,90 refere-se unicamente ao custo de envio e manuseio para o seu endereço.
+            </p>
         </footer>
-      );
-    }
+    </div>
 
-    function AccessModal({ open, onClose, onSubmit }) {
-      const [tab, setTab] = React.useState("login"); // "login" | "register"
-      const [name, setName] = React.useState("");
-      const [email, setEmail] = React.useState("");
-      const [password, setPassword] = React.useState("");
-      const [error, setError] = React.useState("");
-      if (!open) return null;
 
-      const submit = (e) => {
-        e.preventDefault();
-        const res = onSubmit(tab, { name, email, password });
-        if (res?.ok) onClose();
-        else setError(res?.msg || "Erro ao acessar");
-      };
-
-      return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-40 p-4">
-          <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl border border-blue-100">
-            <div className="flex items-start justify-between">
-              <div>
-                <div className="flex gap-2">
-                  <button onClick={() => setTab("login")} className={`px-3 py-1.5 rounded-lg text-sm font-semibold ${tab==="login"?"bg-blue-600 text-white":"bg-gray-100 text-gray-700"}`}>
-                    Entrar
-                  </button>
-                  <button onClick={() => setTab("register")} className={`px-3 py-1.5 rounded-lg text-sm font-semibold ${tab==="register"?"bg-blue-600 text-white":"bg-gray-100 text-gray-700"}`}>
-                    Cadastrar
-                  </button>
-                </div>
-                <p className="text-sm text-gray-600 mt-2">Acesso à área de alunos</p>
-              </div>
-              <button onClick={onClose} className="h-8 w-8 rounded-lg border border-gray-200 hover:bg-gray-50">✕</button>
-            </div>
-            <form onSubmit={submit} className="mt-4 space-y-4">
-              {tab !== "login" && (
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Nome</label>
-                  <input value={name} onChange={(e)=>setName(e.target.value)} className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Seu nome"/>
-                </div>
-              )}
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="voce@email.com"/>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Senha</label>
-                <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="••••••••"/>
-              </div>
-              {error && <p className="text-sm text-red-600">{error}</p>}
-              <button type="submit" className="w-full px-4 py-2 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700">
-                {tab === "login" ? "Entrar" : "Criar minha conta"}
-              </button>
-            </form>
-          </div>
+    <div id="exitPopup" class="exit-popup-overlay">
+        <div class="exit-popup-content">
+            <span class="popup-close" onclick="closePopup()">&times;</span>
+            <p class="popup-title">NÃO VÁ EMBORA!</p>
+            <p class="popup-subtitle">Esta Oferta de Kit Grátis é Única e Exclusiva!</p>
+            
+            <p class="popup-text">
+                O Kit Fitness Essencial (Elásticos + Corda + Tapete) tem o valor de R$ 197,90, mas liberamos um número limitado por um preço promocional.
+            </p>
+            
+            <p class="popup-price">
+                APENAS R$ 27,90
+            </p>
+            <p class="popup-text" style="font-weight: bold; color: var(--cor-principal);">
+                Você paga SOMENTE o FRETE e leva o Kit Completo! Garanta o seu antes que o stock promocional termine.
+            </p>
+            <a href="URL_DO_CHECKOUT_AQUI" class="popup-cta">
+                QUERO O KIT POR R$ 27,90 AGORA!
+            </a>
         </div>
-      );
-    }
+    </div>
+    
+    <script>
+        // Variável de controle para garantir que o pop-up só abra uma vez
+        let popupShown = false;
+        
+        const exitPopup = document.getElementById('exitPopup');
+        
+        function showPopup() {
+            if (!popupShown) {
+                exitPopup.style.display = 'block';
+                popupShown = true;
+            }
+        }
+        
+        function closePopup() {
+            exitPopup.style.display = 'none';
+        }
 
-    function LessonsArea({ user, onLogout }) {
-      const [current, setCurrent] = React.useState(0);
+        // Função principal que detecta o movimento do mouse para fora da área do cliente (Exit Intent)
+        document.addEventListener('mouseleave', (e) => {
+            // Verifica se o mouse está saindo pela parte superior da tela (padrão de intenção de saída)
+            if (e.clientY < 10) { 
+                showPopup();
+            }
+        });
 
-      return (
-        <div className="min-h-screen bg-gradient-to-b from-white to-blue-50">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="flex items-center justify-between">
-              <div>
-                <h1 className="text-2xl font-bold text-gray-900">Olá, {user?.name || "Aluno"} 👋</h1>
-                <p className="text-sm text-gray-600">Você está na área de alunos do curso <strong>{COURSE_NAME}</strong>.</p>
-              </div>
-              <button onClick={onLogout} className="px-3 py-2 rounded-xl text-sm font-medium border border-gray-200 hover:bg-gray-50">Sair</button>
-            </div>
+        // Adiciona um evento para fechar o pop-up ao clicar no overlay (fora do conteúdo)
+        exitPopup.addEventListener('click', (e) => {
+            if (e.target === exitPopup) {
+                closePopup();
+            }
+        });
+        
+        // Timeout de 60 segundos para mostrar o pop-up, caso o cliente não saia. (Alternativa ao mouseleave)
+        /*
+        setTimeout(() => {
+            showPopup();
+        }, 60000); 
+        */
+    </script>
 
-            <div className="mt-6 grid lg:grid-cols-3 gap-6">
-              <div className="lg:col-span-2">
-                <div className="rounded-2xl overflow-hidden border border-blue-100 shadow bg-white">
-                  <div className="relative" style={{paddingTop: '56.25%'}}>
-                    {/* O LINK DO VÍDEO NÃO APARECE NO FRONT. Ele é carregado no iframe abaixo. */}
-                    {/* PARA TROCAR O VÍDEO DESTA AULA, edite a propriedade 'url' na constante LESSONS no topo do arquivo. */}
-                    <iframe
-                      className="absolute inset-0 h-full w-full"
-                      src={LESSONS[current].url}
-                      title="Player da aula"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h2 className="text-xl font-bold text-gray-900">{LESSONS[current].title}</h2>
-                    <p className="text-sm text-gray-600 mt-1">Conteúdo exclusivo para alunos. Não compartilhe este acesso.</p>
-                  </div>
-                </div>
-
-                <div className="mt-6 rounded-2xl border border-blue-100 bg-white p-4">
-                  <h3 className="font-semibold text-gray-900">Materiais</h3>
-                  <ul className="list-disc ml-6 mt-2 text-sm text-gray-700">
-                    <li>Slides (PDF)</li>
-                    <li>Checklist (DOCX)</li>
-                    <li>Links úteis</li>
-                  </ul>
-                </div>
-              </div>
-
-              <aside className="space-y-6">
-                <div className="rounded-2xl border border-blue-100 bg-white p-4">
-                  <h3 className="font-semibold text-gray-900">Aulas</h3>
-                  <ul className="mt-2 space-y-2 text-sm">
-                    {LESSONS.map((l, i) => (
-                      <li key={i}>
-                        {/* SOMENTE O NOME APARECE PARA O ALUNO */}
-                        {/* PARA TROCAR O NOME DA AULA, edite 'title' no array LESSONS */}
-                        <button onClick={() => setCurrent(i)} className={`w-full text-left px-3 py-2 rounded-lg hover:bg-blue-50 ${i===current?"bg-blue-50 font-semibold text-blue-800":"text-gray-700"}`}>
-                          {String(i+1).padStart(2, "0")} — {l.title}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="rounded-2xl border border-blue-100 bg-white p-4">
-                  <h3 className="font-semibold text-gray-900">Suporte</h3>
-                  <p className="text-sm text-gray-600">Dúvidas? Envie um email e retornaremos em 24h úteis.</p>
-                </div>
-              </aside>
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    function App() {
-      const { user, login, register, logout } = useAuth();
-      const [route, setRoute] = React.useState("landing"); // começa na landing
-      const [accessOpen, setAccessOpen] = React.useState(false);
-
-      const handleAccessSubmit = (mode, { name, email, password }) => {
-        return mode === "login" ? login(email, password) : register(name, email, password);
-      };
-
-      React.useEffect(() => { if (user) setRoute("lessons"); }, [user]);
-
-      if (route === "lessons" && user) {
-        return (
-          <>
-            <Navbar onOpenAccess={() => setAccessOpen(true)} user={user} onLogout={() => { logout(); setRoute("landing"); }} goLessons={() => setRoute("lessons")} />
-            <LessonsArea user={user} onLogout={() => { logout(); setRoute("landing"); }} />
-          </>
-        );
-      }
-
-      return (
-        <div className="min-h-screen bg-white text-gray-800">
-          <Navbar onOpenAccess={() => setAccessOpen(true)} user={user} onLogout={() => { logout(); setRoute("landing"); }} goLessons={() => setRoute("lessons")} />
-          <main>
-            <Hero onOpenAccess={() => setAccessOpen(true)} />
-          </main>
-          <Footer />
-          <AccessModal open={accessOpen} onClose={() => setAccessOpen(false)} onSubmit={handleAccessSubmit} />
-        </div>
-      );
-    }
-
-    ReactDOM.render(<App />, document.getElementById("root"));
-  </script>
 </body>
 </html>
